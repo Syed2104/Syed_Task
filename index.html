@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Admin Design</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- <link rel="stylesheet" href="./assets/css/styles.css"> -->
+    <link rel="stylesheet" href="/assets/chart/dist/apexcharts.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <main id="main-section">
+
+    <!-- Navbar -->
+    <div class="nav-sec ">
+
+      <nav class="navbar bg-light bg-white">
+          <div class="container-fluid">
+              <div class="nav__left d-flex align-items-center justify-content-between">
+                <div class="d-flex justify-content-between">
+
+                  <div class="toggle">
+                      <div class="tog-img btn" onclick="myFunction()">
+                          <img src="./assets/img/toggle.svg" alt="">
+                      </div>
+                  </div>
+                  <div class="tog-serach ps-3 d-flex align-items-center justify-content-between">
+                      <i class="fa-solid fa-magnifying-glass me-3 d-none d-md-block"></i>
+
+                      <input type="text" class="search-field tog-serach d-md-block d-none" placeholder="Search Transactions ,Invoices here">
+                  </div>
+                </div>
+              </div>
+        
+
+            <div class="nav__right d-flex align-items-center justify-content-between">
+              <div class="notifi">
+
+                <div class="notification pe-4">
+                    <i class="fa-solid fa-magnifying-glass mx-3 d-md-none" ></i>
+                    <i class="fa-regular fa-bell  mx-3" onclick="myMsg()"></i>
+                    <div class="card shadow rounded p-4 notification-card me-3 mt-3" id="myMsg">
+                      <div class="message d-flex justify-content-between align-items-center py-2">
+  
+                        <div class="msg-img  me-3">
+                          <img src="./assets/img/profile-pic-01.jpg" alt="" class="rounded-circle">
+                        </div>
+                        <div class="msg-con">
+                          <h5>Bavid Kames</h5>
+                          <p class="m-0">Assigned you on the call with Sara</p>
+                        </div>
+                        <div class="msg-min align-self-start">
+                          <p> 2mins ago</p>
+                        </div>
+                      </div>
+                      <div class="message d-flex justify-content-between align-items-center py-2">
+  
+                        <div class="msg-img  me-3">
+                          <img src="./assets/img/profile-pic-02.jpg" alt="" class="rounded-circle">
+                        </div>
+                        <div class="msg-con">
+                          <h5>Bavid Kames</h5>
+                          <p class="m-0">Assigned you on the call with Sara</p>
+                        </div>
+                        <div class="msg-min align-self-start">
+                          <p> 2mins ago</p>
+                        </div>
+                      </div>
+                      <div class="message d-flex justify-content-between align-items-center py-2">
+  
+                        <div class="msg-img  me-3">
+                          <img src="./assets/img/profile-pic-03.jpg" alt="" class="rounded-circle">
+                        </div>
+                        <div class="msg-con">
+                          <h5>Bavid Kames</h5>
+                          <p class="m-0">Assigned you on the call with Sara</p>
+                        </div>
+                        <div class="msg-min align-self-start">
+                          <p> 2mins ago</p>
+                        </div>
+                      </div>
+                      <div class="message d-flex justify-content-between align-items-center py-2">
+  
+                        <div class="msg-img  me-3">
+                          <img src="./assets/img/profile-pic-04.jpg" alt="" class="rounded-circle">
+                        </div>
+                        <div class="msg-con">
+                          <h5>Bavid Kames</h5>
+                          <p class="m-0">Assigned you on the call with Sara</p>
+                        </div>
+                        <div class="msg-min align-self-start">
+                          <p> 2mins ago</p>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-center">
+                        <a href="#" class="fs-5">Show More</a>
+                      </div>
+                    </div>
+                </div>
+               
+               
+             
+              </div>
+              <a class="navbar-brand" href="#" >
+                  <span class="pe-3" >Jhon Doe </span>
+                  <i class="fa-solid fa-angle-down pe-3" ></i>
+                  <img src="./assets/img/profile-pic-01.jpg" class="rounded-circle"  onclick="myProfile()" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                 
+                </a>
+                <div class="profile-list card shadow rounded  p-2 " id="profile-list">
+                  <div class="list d-flex my-1 p-2" >
+                    <div class="icon me-3">
+                      <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="content">
+                      <p>My Profile</p>
+                    </div>
+                  </div>
+                  <div class="list d-flex my-1 p-2" >
+                    <div class="icon me-3">
+                      <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <div class="content">
+                      <p>Billing</p>
+                    </div>
+                  </div>
+                  <div class="list d-flex my-1 p-2" >
+                    <div class="icon me-3">
+                      <i class="fa-solid fa-right-from-bracket"></i>
+                    </div>
+                    <div class="content">
+                      <p>Logout</p>
+                    </div>
+                  </div>
+         
+                </div>
+            </div>
+     
+         
+          
+          </div>
+          <div class="profile-list d-none card shadow rounded my-20 col-md-2 col-6 p-4 d-flex justify-content-center align-items-center ">
+            <div class="list d-flex my-1" >
+              <div class="icon me-5">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="content">
+                <p>My Profile</p>
+              </div>
+            </div>
+            <div class="list d-flex my-1" >
+              <div class="icon me-5">
+                <i class="fa-solid fa-receipt"></i>
+              </div>
+              <div class="content">
+                <p>My Profile</p>
+              </div>
+            </div>
+            <div class="list d-flex my-1" >
+              <div class="icon me-5">
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </div>
+              <div class="content">
+                <p>My Profile</p>
+              </div>
+            </div>
+   
+          </div>
+        </nav>
+        <!-- <div class="btn">
+          <span class="fas fa-bars"></span>
+        </div> -->
+        <nav class="sidebar">
+          <div class="text">ACME</div>
+          <ul>
+            <li class="d-flex"> <a href="#">Home</a><span class="w-40"><img src="./assets/img/icons/homes.png" alt="home"></span></li>
+            <li class="active"><a href="#">Dashboard</a><span class="w-40"><img src="./assets/img/icons/dash.png" alt="home"></span></li>
+            <li class="d-none">
+              <a href="#" class="feat-btn">Features
+                <span class="fas fa-caret-down first"></span>
+              </a>
+              <ul class="feat-show">
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Elements</a></li>
+              </ul>
+            </li>
+      
+            <li class="d-flex align-items-center"><a href="#">inbox</a><span class="w-40"><img src="./assets/img/icons/inbox.png" alt="home"></span> <span class="badge rounded-pill text-bg-danger me-3 p-2">New</span></li>
+            <li><a href="#">Products</a><span class="w-40"><img src="./assets/img/icons/products.png" alt="home"></span></li>
+            <li><a href="#">Admin</a><span class="w-40"><img src="./assets/img/icons/admin.png" alt="home"></span></li>
+          </ul>
+        </nav>
+    </div>
+      <section class="py-5" >
+        <div class="container-fluid">
+            <div class="container mt-3">
+                <div class="cont-top py-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="title">Overview</h3>
+                        <button class="main-btn">Add funds  <span class="ps-3"><i class="fa-solid fa-plus"></i></span></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="my-20 col-md-4 h-350 order-2 order-md-1">
+                        <div class="statistics card p-4 shadow"id="chart" >
+                           
+                        </div>
+                    </div>
+                    <div class="my-20 col-md-4 h-350 order-3 order-md-2">
+                        <div class="card shadow">
+                           <div class="pie-title  p-4">
+                            <h4>Sales Distribution</h4>
+                           </div>
+                           <div class="d-flex justify-content-center">
+
+                             <div class="pie-charts w-300 " id="pie-chart">
+ 
+                             </div>
+                            </div>
+                            <div class="pie-items  d-flex justify-content-center  px-5 py-3">
+                             <div class="d-flex justify-content-center align-items-center me-3">
+                               <span class="shape-1 bg-1"></span>
+                               <span class="fs-5"><strong>France 440 sales</strong></span>
+                             </div>
+                             <div class="d-flex justify-content-center align-items-center">
+                               <span class="shape-1 bg-2"></span>
+                               <span class="fs-5"><strong>Italy 440 sales</strong></span>
+                             </div>
+                            </div>
+                            <div class="pie-items  d-flex justify-content-center  px-5 pb-3">
+                             <div class="d-flex justify-content-center align-items-center me-3">
+                               <span class="shape-1 bg-3"></span>
+                               <span class="fs-5"><strong>Japan 440 sales</strong></span>
+                             </div>
+                             <div class="d-flex justify-content-center align-items-center">
+                               <span class="shape-1 bg-4"></span>
+                               <span class="fs-5"><strong>Canada 440 sales</strong></span>
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-20 col-md-4 h-350 order-1 order-md-3">
+                        <div class="profile-card card shadow">
+                            <div class="profile">
+                                <img src="./assets/img/profile-pic-01.jpg" alt="profile">
+                            </div>
+                            <div class="profile-detail">
+                                <h4 class="name-title">Nick Herasimenka</h4>
+                                <h6 class="sub-title">United States</h6>
+                            </div>
+                            <div class="social-media mx-3">
+                                <i class="fa-brands fa-twitter"></i>
+                                <i class="fa-brands fa-facebook"></i>
+                                <i class="fa-brands fa-linkedin"></i>
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="list-user mx-4 pt-3">
+                                <div class="user-heading d-flex align-items-center justify-content-between">
+                                    <p>Our User</p>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                                <div class="user d-flex align-items-center py-3">
+                                    <div class="user-img rounded-circle"><img src="./assets/img/profile-pic-02.jpg" alt="user" class="rounded-circle"></div>
+                                    <div class="user-con ps-4 me-auto">
+                                        <h5>Drew James</h5>
+                                        <p class="m-0">United States</p>
+                                    </div>
+                                    <div class="user-number align-self-end pb-1">
+                                        <p class="m-0">Mobile Number : 8715567876</p>
+                                    </div>
+                                </div>
+                                <div class="user d-flex align-items-center py-3">
+                                    <div class="user-img rounded-circle"><img src="./assets/img/profile-pic-03.jpg" alt="user" class="rounded-circle"></div>
+                                    <div class="user-con ps-4 me-auto">
+                                        <h5>Drew James</h5>
+                                        <p class="m-0">United States</p>
+                                    </div>
+                                    <div class="user-number align-self-end pb-1">
+                                        <p class="m-0">Mobile Number : 8715567876</p>
+                                    </div>
+                                </div>
+                                <div class="user d-flex align-items-center py-3">
+                                    <div class="user-img rounded-circle"><img src="./assets/img/profile-pic-04.jpg" alt="user" class="rounded-circle"></div>
+                                    <div class="user-con ps-4 me-auto">
+                                        <h5>Drew James</h5>
+                                        <p class="m-0">United States</p>
+                                    </div>
+                                    <div class="user-number align-self-end pb-1">
+                                        <p class="m-0">Mobile Number : 8715567876</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row py-3">
+                    <div class="my-20 col-md-8 mt-50 bg-white  table-responsive p-4 rounded">
+                        <div class="table-area " >
+                            <h4 class="pb-3">Referrer</h4>
+                            <table class="table table-hover table-borderless">
+                                <thead>
+                                  <tr class="table-light">
+                                    <th scope="col">Locations</th>
+                                    <th scope="col">Views</th>
+                                    <th scope="col">Sales</th>
+                                    <th scope="col">Conversion</th>
+                                    <th scope="col">Total</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <!-- <th scope="row">Google.com</th> -->
+                                    <td>google.com</td>
+                                    <td>3746</td>
+                                    <td>752</td>
+                                    <td>43%</td>
+                                    <td>$19,291</td>
+                                  </tr>
+                                  <tr>
+                                    <!-- <th scope="row">Facebook.com</th> -->
+                                    <td>facebook.com</td>
+                                    <td>8126</td>
+                                    <td>728</td>
+                                    <td>32%</td>
+                                    <td>$17,638</td>
+                                  </tr>
+                                  <tr>
+                                    <td scope="row">Twitter.com</td>
+                                    <td>8836</td>
+                                    <td>694</td>
+                                    <td>28%</td>
+                                    <td>$16,218</td>
+                                  </tr>
+                                  <tr>
+                                    <!-- <th scope="row">Direct email,IM</th> -->
+                                    <td>Direct email,IM</td>
+                                    <td>1173</td>
+                                    <td>645</td>
+                                    <td>24%</td>
+                                    <td>$14,421</td>
+                                  </tr>
+                                  <tr>
+                                    <!-- <th scope="row">linkdin.com</th> -->
+                                    <td >linkdin.com</td>
+                                    <td>2739</td>
+                                    <td>539</td>
+                                    <td>20%</td>
+                                    <td>$12,370</td>
+                                  </tr>
+                                  <tr>
+                                    <!-- <th scope="row">instagram.com</th> -->
+                                    <td>instagram.com</td>
+                                    <td>2739</td>
+                                    <td>539</td>
+                                    <td>20%</td>
+                                    <td>$12,370</td>
+                                  </tr>
+                             
+                                  
+                                </tbody>
+                              </table>
+                              <a href="#" class="fs-5 px-2 py-4 bold">Show more</a>
+                        </div>
+                    </div>
+                    <div class="my-20 col-md-4">
+                        <div class="card p-4">
+                            <div class="user-heading d-flex align-items-center justify-content-between pb-3">
+                                <p>Product video</p>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                            <div class="thumb-vid">
+                              <video class="bg__video-content" controls poster="./assets/img/video thumbnail.png">
+                                <source src="./assets/video/vid.mp4" type="video/mp4">
+                              </video>
+                              
+                                <!-- <img src="./assets/img/video thumbnail.png" class="rounded" alt="thumbnail">
+                                <span class="vid-play">
+                                    <i class="fa-solid fa-play"></i>
+                                </span> -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+  </main>
+          <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+          <script>
+           
+        var options = {
+          series: [{
+          name: 'Sales',
+          data: [4, 3, 10, 9, 29, 19, 22, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5]
+        }],
+          chart: {
+          height: 350,
+          type: 'line',
+        },
+        forecastDataPoints: {
+          count: 7
+        },
+        stroke: {
+          width: 5,
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'datetime',
+          categories: ['1/11/2000', '2/11/2000', '3/11/2000', '4/11/2000', '5/11/2000', '6/11/2000', '7/11/2000', '8/11/2000', '9/11/2000', '10/11/2000', '11/11/2000', '12/11/2000', '1/11/2001', '2/11/2001', '3/11/2001','4/11/2001' ,'5/11/2001' ,'6/11/2001'],
+          tickAmount: 10,
+          labels: {
+            formatter: function(value, timestamp, opts) {
+              return opts.dateFormatter(new Date(timestamp), 'dd MMM')
+            }
+          }
+        },
+        title: {
+          text: 'Forecast',
+          align: 'left',
+          style: {
+            fontSize: "14px",
+            fontWeight:"700"
+            
+          }
+        },
+        fill: {
+          type: 'gradient',
+          gradient: {
+            shade: 'dark',
+            gradientToColors: [ '#FDD835'],
+            shadeIntensity: 1,
+            type: 'horizontal',
+            opacityFrom: 1,
+            opacityTo: 1,
+            stops: [0, 100, 100, 100]
+          },
+        },
+        yaxis: {
+          min: -10,
+          max: 40
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+      
+
+        var options = {
+          series: [40, 30, 20, 55],
+          chart: {
+          type: 'donut',
+        },
+        
+        //     title: {
+        //   text: 'Sales Distribution',
+        //   align: 'left'
+        // },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200,
+              height:350,
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#pie-chart"), options);
+        chart.render();
+      
+      
+</script>
+<script>
+  $('.btn').click(function(){
+    $(this).toggleClass("click");
+    $('.sidebar').toggleClass("show");
+  });
+    $('.feat-btn').click(function(){
+      $('nav ul .feat-show').toggleClass("show");
+      $('nav ul .first').toggleClass("rotate");
+    });
+    $('.serv-btn').click(function(){
+      $('nav ul .serv-show').toggleClass("show1");
+      $('nav ul .second').toggleClass("rotate");
+    });
+    $('nav ul li').click(function(){
+      $(this).addClass("active").siblings().removeClass("active");
+    });
+  </script>
+  <script>
+    function myFunction() {
+   var element = document.getElementById("main-section");
+   element.classList.toggle("left-margin");
+}
+    
+
+// profile
+function myProfile() {
+  var x = document.getElementById("profile-list");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+// Notification
+function myMsg() {
+  var x = document.getElementById("myMsg");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  </script>
+
+<!-- <script src="./assets/chart/dist/apexcharts.js"></script> -->
+
+<script src="./assets/js/app.js"></script>
+</body>
+</html>
